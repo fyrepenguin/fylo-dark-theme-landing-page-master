@@ -1,5 +1,82 @@
 @import url(normalize.css);
 
+/* Default */
+
+body {
+  color: white;
+  font-family: "Open sans", sans-serif;
+  text-align: center;
+  background: black;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Header */
+
+.header-logo > img {
+  height: 1.5rem;
+}
+
+nav {
+  padding: 1.5rem 0 1.5rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav > ul {
+  list-style-type: none;
+  font-family: Raleway;
+  font-size: 0.75rem;
+  padding: 0;
+  display: flex;
+  margin: 0;
+}
+
+nav li {
+  margin-right: 1.5rem;
+}
+
+.header-text > div {
+  margin: 1.25rem 2.25rem;
+}
+
+.header-text img {
+  width: 100%;
+}
+
+.header-text h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin: 1.875rem 1.75rem 0;
+}
+
+.header-text p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 1rem 2.5rem;
+}
+
+a.btn {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-family: Raleway;
+  font-size: 0.875rem;
+  padding: 1rem 5rem;
+  background: pink;
+  border-radius: 3rem;
+  margin: 1rem auto;
+  display: inline-block;
+}
+
+/* FEATUES */
+
+/* FOOTER */
 .attribution {
   font-size: 11px;
   text-align: center;
