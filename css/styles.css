@@ -295,7 +295,8 @@ footer {
   margin-top: 2.25rem;
 }
 
-.contact div {
+.location,
+.contact div div {
   display: flex;
 }
 
@@ -532,5 +533,86 @@ footer {
 
   .user div {
     padding-left: 0.625rem;
+  }
+
+  /* CTA */
+
+  .cta {
+    margin: 11rem auto 1rem;
+    padding: 1.5rem 4.75rem;
+    max-width: 54rem;
+  }
+  .cta h2 {
+    font-size: 2rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .cta p {
+    padding: 0 1rem;
+  }
+  form {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2.25rem;
+  }
+
+  input {
+    padding: 1rem 2.25rem;
+    flex-grow: 1;
+    margin-right: 3.75%;
+    font-size: 0.75rem;
+  }
+
+  .cta a {
+    width: 28.5%;
+    padding: 0.875rem;
+    font-size: 0.875rem;
+    margin: 0;
+  }
+
+  /* Footer */
+
+  .footer-text {
+    grid-template-columns: 2.825fr repeat(3, 1fr);
+    justify-content: space-around;
+    margin-top: 2rem;
+  }
+
+  .contact {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .links1 {
+    margin-top: 0;
+    padding-left: 9.5rem;
+  }
+
+  .links2 {
+    margin-top: 0;
+    padding-left: 4.75rem;
+  }
+
+  .social-links {
+    margin-top: 0;
+  }
+
+  .links1 ul,
+  .links2 ul {
+    margin: 0;
+  }
+
+  footer {
+    margin: 6.25rem 1.5rem 0 7rem;
+  }
+
+  .location,
+  .contact div div {
+    width: 60%;
+  }
+  .phone {
+    margin-top: 0;
   }
 }
