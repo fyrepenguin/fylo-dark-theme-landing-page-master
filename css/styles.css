@@ -1,18 +1,7 @@
 @import url(normalize.css);
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Raleway:400,700&display=swap");
 
-/* - Dark Blue (intro and email sign up background): hsl(217, 28%, 15%)
-- Dark Blue (main background): hsl(218, 28%, 13%)
-- Dark Blue (footer background): hsl(216, 53%, 9%)
-- Dark Blue (testimonials background): hsl(219, 30%, 18%)
-
-### Accent
-
-- Cyan (inside call-to-action gradient): hsl(176, 68%, 64%)
-- Blue (inside call-to-action gradient): hsl(198, 60%, 50%)
-
-### Neutral
-
-- White: hsl(0, 0%, 100%) */
+/* Default */
 :root {
   --darkBlueIntro: hsl(217, 28%, 15%);
   --darkBlueMain: hsl(218, 28%, 13%);
@@ -22,23 +11,48 @@
   --blue: hsl(198, 60%, 50%);
   --white: hsl(0, 0%, 100%);
 }
-/* Default */
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 body {
-  color: white;
+  color: var(--white);
   font-family: "Open sans", sans-serif;
   text-align: center;
-  background: black;
+  background: var(--darkBlueMain);
 }
+
 ul {
   list-style-type: none;
 }
+a.btn,
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Raleway", sans-serif;
+}
+a.btn {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 0.875rem;
+  padding: 1rem 5rem;
+  border-radius: 3rem;
+  margin: 1rem auto;
+  display: inline-block;
+  background-image: linear-gradient(to right, var(--cyan), var(--blue));
+}
+
 /* Header */
+header {
+  background-image: url(../images/bg-curvy-mobile.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-color: var(--darkBlueIntro);
+}
 
 .header-logo > img {
   height: 1.5rem;
@@ -74,7 +88,6 @@ nav li {
 }
 
 .header-text h1 {
-  font-family: "Raleway", sans-serif;
   font-size: 1.5rem;
   line-height: 1.5;
   margin: 1.875rem 1.75rem 0;
@@ -84,19 +97,6 @@ nav li {
   font-size: 0.875rem;
   line-height: 1.5;
   margin: 1rem 2.5rem;
-}
-
-a.btn {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-family: Raleway;
-  font-size: 0.875rem;
-  padding: 1rem 5rem;
-  background: pink;
-  border-radius: 3rem;
-  margin: 1rem auto;
-  display: inline-block;
 }
 
 /* FEATUES */
@@ -113,7 +113,6 @@ a.btn {
 
 .features h3 {
   font-size: 1.125rem;
-  font-family: Raleway;
   margin-top: 1.375rem;
   margin-bottom: 0.625rem;
 }
@@ -158,7 +157,6 @@ a.btn {
 
 .info-text h2 {
   font-size: 1.125rem;
-  font-family: Raleway;
   margin-top: 0.5rem;
   margin-left: 0.25rem;
   margin-bottom: 1.125rem;
@@ -173,10 +171,10 @@ a.btn {
 
 .info-text a {
   text-decoration: none;
-  color: white;
+  color: var(--white);
   font-size: 0.75rem;
   display: inline-block;
-  margin-top: 1.125rem;
+  margin-top: 0.875rem;
   border-bottom: 1px solid;
   padding-bottom: 0.375rem;
 }
@@ -196,21 +194,27 @@ a.btn {
 
 .testimonial-card {
   margin: 1.5rem 3rem;
-  border: 1px solid;
+  border-radius: 0.5rem;
   padding: 1.125rem;
+  background-color: var(--darkBlueTestimonials);
+}
+.testimonial-card:first-of-type {
+  position: relative;
 }
 
+.testimonial-card:first-of-type::before {
+  content: url(../images/bg-quotes.png);
+  scale: 0.5;
+  position: absolute;
+  top: -2rem;
+  left: -1rem;
+  z-index: -1;
+}
 .testimonial-card > p {
   font-size: 0.625rem;
   line-height: 1.8;
   text-align: left;
   margin-top: 0.375rem;
-}
-
-.user {
-  display: flex;
-  margin-top: 1rem;
-  margin-bottom: 0.25rem;
 }
 
 .testimonial-card img {
@@ -223,7 +227,11 @@ a.btn {
   margin: 0;
   font-size: 0.675rem;
 }
-
+.user {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
 .user p {
   margin: 0;
   font-size: 0.5rem;
@@ -238,14 +246,15 @@ a.btn {
 /* CTA */
 
 .cta {
-  border: 1px solid;
-  margin: 9.5rem 1.25rem 1rem;
+  border-radius: 0.75rem;
+  margin: 10rem 1.25rem 1rem;
   padding: 1.75rem;
   padding-bottom: 1.25rem;
+  background-color: var(--darkBlueIntro);
+  position: relative;
 }
 
 .cta h2 {
-  font-family: Raleway;
   font-size: 1.125rem;
   margin-top: 1rem;
 }
@@ -278,7 +287,10 @@ input {
 
 footer {
   text-align: left;
-  margin: 1.75rem;
+  background-color: var(--darkBlueFooter);
+  padding: 1.75rem;
+  margin-top: -10rem;
+  padding-top: 9rem;
 }
 
 .footer-logo {
@@ -358,7 +370,7 @@ footer {
   margin-top: 3.5rem;
 }
 .social-links a {
-  color: white;
+  color: var(--white);
   display: inline-block;
   margin: 0.175rem;
   border: 1px solid;
@@ -370,8 +382,10 @@ footer {
 }
 
 .attribution {
+  padding-top: 2rem;
   font-size: 0.675rem;
   text-align: center;
+  padding-bottom: 2rem;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
@@ -387,13 +401,16 @@ footer {
   }
 }
 @media screen and (min-width: 960px) {
+  header {
+    background-image: url(../images/bg-curvy-desktop.svg);
+  }
   .features {
+    grid-template-columns: 1fr 1fr;
     align-items: baseline;
-    grid-template-columns: repeat(2, 27.5rem);
     grid-gap: 1.75rem 4.75rem;
     margin-left: auto;
     margin-right: auto;
-    max-width: 61rem;
+    max-width: 45rem;
   }
 
   .features > div:nth-child(3) {
@@ -442,6 +459,10 @@ footer {
   }
 
   /* FEATURES */
+  .features {
+    grid-template-columns: repeat(2, 27.5rem);
+    max-width: 61rem;
+  }
   .features img {
     scale: 1;
   }
@@ -505,22 +526,15 @@ footer {
     grid-template-columns: repeat(3, auto);
     padding: 0 7.75rem;
   }
-  .testimonial-card:first-of-type {
-    position: relative;
-  }
 
-  .testimonial-card:first-of-type::before {
-    content: url(../images/bg-quotes.png);
-    position: absolute;
-    top: -2rem;
-    left: -1rem;
-    z-index: -1;
-  }
   .testimonial-card {
     margin: 1.5rem 1.25rem;
     padding: 2.25rem 1.25rem 1.75rem;
   }
 
+  .testimonial-card:first-of-type::before {
+    scale: 1;
+  }
   .testimonial-card > p {
     font-size: 0.9375rem;
     line-height: 1.375;
@@ -538,8 +552,8 @@ footer {
   /* CTA */
 
   .cta {
-    margin: 11rem auto 1rem;
-    padding: 1.5rem 4.75rem;
+    margin: 11.25rem auto 1rem;
+    padding: 1.5rem 4.75rem 2.75rem;
     max-width: 54rem;
   }
   .cta h2 {
@@ -573,10 +587,21 @@ footer {
 
   /* Footer */
 
+  footer {
+    margin-top: -7rem;
+    padding: 6.5rem 1.25rem 0 6.875rem;
+  }
   .footer-text {
-    grid-template-columns: 2.825fr repeat(3, 1fr);
-    justify-content: space-around;
-    margin-top: 2rem;
+    grid-template-columns: 2.875fr repeat(3, 1fr);
+    margin-top: 1.875rem;
+  }
+  .links1 {
+    padding-left: 9rem;
+    margin-top: 0;
+  }
+  .links2 {
+    padding-left: 4.5rem;
+    margin-top: 0;
   }
 
   .contact {
@@ -585,27 +610,14 @@ footer {
     justify-content: space-between;
   }
 
-  .links1 {
-    margin-top: 0;
-    padding-left: 9.5rem;
-  }
-
-  .links2 {
-    margin-top: 0;
-    padding-left: 4.75rem;
-  }
-
   .social-links {
     margin-top: 0;
+    margin-right: 1rem;
   }
 
   .links1 ul,
   .links2 ul {
     margin: 0;
-  }
-
-  footer {
-    margin: 6.25rem 1.5rem 0 7rem;
   }
 
   .location,
