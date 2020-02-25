@@ -33,6 +33,10 @@ h3,
 h4 {
   font-family: "Raleway", sans-serif;
 }
+a {
+  text-decoration: none;
+  color: var(--white);
+}
 a.btn {
   text-decoration: none;
   color: var(--white);
